@@ -1,0 +1,56 @@
+{% extends "teacherhome.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div class="container mt-5"> 
+
+      {% block content4 %}
+      {% endblock content4 %}
+
+   {% block content1 %}
+ 
+  
+
+    <form action="/updateteacher/{{view.id}}" method="post">
+      {% csrf_token%}
+<label class="form-label">firstname</label>
+ 
+      <input type="text" name="firstname"  id="" value="{{data.first_name}}" ><br> <br>
+<label class="form-label">lastname</label>
+
+      <input type="text" name="lastname"  id="" value="{{data.last_name}}"><br> <br>
+<label class="form-label">email</label>
+
+      <input type="email" name="email"  id="" value="{{data.email}}"><br> <br>
+<label class="form-label">address</label>
+
+      <input type="text" name="address"  id="" value="{{data.address}}"><br> <br>
+<label class="form-label">phone number</label>
+
+      <input type="number" name="phonenumber"  id="" value="{{data.phone_number}}"><br> <br>
+<label class="form-label">salary</label>
+
+
+      <input type="number" name="salary"  id="" value="{{view.salary}}"><br> <br>
+<label class="form-label">experience</label>
+
+      <input type="number" name="experience"  id="" value="{{view.experience}}"><br> <br>
+
+
+    
+      <input type="submit" value="submit" class="btn btn-primary mt-3">
+
+    </form>
+    {% endblock content1 %}
+    {% block contentfooter %}
+{% endblock contentfooter %} 
+
+</body>
+</div>
+</html>

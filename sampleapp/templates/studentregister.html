@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      {% block content4 %}
+      {% endblock content4 %}
+
+{% block content2 %}
+<h1 style="color: chartreuse;text-align: center;">REGISTER PAGE</h1>
+{% endblock content2 %}
+{% block content1 %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label>firstname</label>
+        <input type="text" name="firstname" placeholder="firstname"><br><br>
+        <label>lastname</label>
+        <input type="text" name="lastname" placeholder="lastname"><br><br>
+       <label>address</label>
+        <input type="text" name="address" placeholder="address"><br><br>
+        <label>email</label>
+        <input type="email" name="email" placeholder="email"><br><br>
+    <label>number</label>
+        <input type="number" name="number" placeholder="number"><br><br>
+<label>guardian</label>
+        <input type="text" name="guardian" placeholder="guardian"><br><br>
+    <label>username</label>
+        <input type="text" name="username" placeholder="username"><br><br>
+    <label>password</label>
+        <input type="password" name="password" placeholder="password"><br><br>
+        <input type="submit" value="register" class="btn btn-primary mt-3">
+    </form>
+{% block contentfooter %}
+{% endblock contentfooter %}
+
+    {% endblock content1 %}
+</body>
+</html>
